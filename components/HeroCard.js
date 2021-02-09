@@ -7,7 +7,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-// import { useFourThreeCardMediaStyles } from "@mui-treasury/styles/cardMedia/fourThree";
+import { useFourThreeCardMediaStyles } from "@mui-treasury/styles/cardMedia/fourThree";
 
 const useGridStyles = makeStyles(({ breakpoints }) => ({
   root: {
@@ -24,6 +24,9 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       transform: "scale(1.1)",
     },
+  },
+  imagen:{
+    paddingTop: "80%",
   },
   card: ({ color }) => ({
     minWidth: 256,
@@ -59,11 +62,11 @@ const useStyles = makeStyles(() => ({
 }));
 
 const CustomCard = ({ classes, image, name, description }) => {
-  // const mediaStyles = useFourThreeCardMediaStyles();
+  const mediaStyles = useFourThreeCardMediaStyles();
   return (
     <CardActionArea className={classes.actionArea}>
       <Card className={classes.card}>
-        <CardMedia image={image} />
+        <CardMedia image={image} classes={{root:classes.imagen}} />
         <CardContent className={classes.content}>
           <Typography className={classes.title} variant={"h2"}>
             {name}

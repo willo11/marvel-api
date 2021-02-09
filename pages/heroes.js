@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SearchBar from "../components/SearchBar";
 import HeroCard from "../components/HeroCard";
+import { Grid, GridList, Paper } from "@material-ui/core";
+
 
 const publicKey = "f2ff86546e04043541b1edfd4ffb004d";
 
@@ -41,10 +43,21 @@ const Heroes = () => {
 
   return (
     <div>
-      <SearchBar query={query} onChange={handleQuery} />
-      {heroes.map((hero) => (
-        <HeroCard hero={hero} key={hero.id} />
-      ))}
+      <Paper elevation={3}>
+        <Grid container>
+          <Grid item xs={12}>
+            <SearchBar query={query} onChange={handleQuery} />
+          </Grid>
+          <Grid item xs={12}>
+          <GridList cellHeight={160} cols={3}>
+            {heroes.map((hero) => (
+              <HeroCard hero={hero} key={hero.id} />
+            ))}
+          </GridList>
+          </Grid>
+          
+        </Grid>
+      </Paper>
     </div>
   );
 };

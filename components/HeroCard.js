@@ -9,6 +9,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { useFourThreeCardMediaStyles } from "@mui-treasury/styles/cardMedia/fourThree";
 
+
 const useGridStyles = makeStyles(({ breakpoints }) => ({
   root: {
     [breakpoints.up("md")]: {
@@ -59,14 +60,17 @@ const useStyles = makeStyles(() => ({
     fontWeight: 500,
     fontSize: 14,
   },
+
 }));
 
 const CustomCard = ({ classes, image, name, description }) => {
+
+
   const mediaStyles = useFourThreeCardMediaStyles();
   return (
     <CardActionArea className={classes.actionArea}>
       <Card className={classes.card}>
-        <CardMedia image={image} classes={{root:classes.imagen}} />
+        <CardMedia image={image} classes={mediaStyles} />
         <CardContent className={classes.content}>
           <Typography className={classes.title} variant={"h2"}>
             {name}
@@ -81,7 +85,7 @@ const CustomCard = ({ classes, image, name, description }) => {
 function HeroCard({hero}) {
   const gridStyles = useGridStyles();
   console.log(hero);
-  const styles = useStyles({ color: "#203f52" });
+  const styles = useStyles({ color: "#eb2626" });
 
   return (
     <>

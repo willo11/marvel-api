@@ -1,3 +1,32 @@
+# Construir una pequeña aplicación con Api Marvel
+
+### Requisitos mínimos:
+
+### La aplicación deberá contener:
+
+- Buscador de personjes
+
+- Listado de personajes. Al buscar aparecerá el listado de resultados
+
+- Detalles técnicos mínimos:
+
+- Conectar con el Api de Marvel
+
+  - http://gateway.marvel.com/v1/public/characters?limit=12&nameStartsWith=${character}&apikey=${key}
+
+- Crear un cliente con NextJS y ReactJs.
+
+- Maquetación css con flexbox o css grid.
+
+- Alojar el proyecto en github.
+
+Una vez finalizada mandar enlace de github adolfo@smsdata.es.
+
+Por supuesto no dudes en escribirme para cualquier cuestión o pregunta.
+
+🙏 ¡Muchas gracias por tu esfuerzo!
+
+# __________________________________________
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

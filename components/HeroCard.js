@@ -1,22 +1,12 @@
 import React from "react";
 import Color from "color";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { useFourThreeCardMediaStyles } from "@mui-treasury/styles/cardMedia/fourThree";
-
-
-const useGridStyles = makeStyles(({ breakpoints }) => ({
-  root: {
-    [breakpoints.up("md")]: {
-      justifyContent: "center",
-    },
-  },
-}));
 
 const useStyles = makeStyles(() => ({
   actionArea: {
@@ -26,11 +16,8 @@ const useStyles = makeStyles(() => ({
       transform: "scale(1.1)",
     },
   },
-  imagen:{
-    paddingTop: "80%",
-  },
   card: ({ color }) => ({
-    minWidth: 256,
+    width: "100%",
     borderRadius: 16,
     boxShadow: "none",
     "&:hover": {
@@ -60,12 +47,9 @@ const useStyles = makeStyles(() => ({
     fontWeight: 500,
     fontSize: 14,
   },
-
 }));
 
 const CustomCard = ({ classes, image, name, description }) => {
-
-
   const mediaStyles = useFourThreeCardMediaStyles();
   return (
     <CardActionArea className={classes.actionArea}>
@@ -82,23 +66,17 @@ const CustomCard = ({ classes, image, name, description }) => {
   );
 };
 
-function HeroCard({hero}) {
-  const gridStyles = useGridStyles();
-  console.log(hero);
+function HeroCard({ hero }) {
   const styles = useStyles({ color: "#eb2626" });
 
   return (
     <>
-      <Grid classes={gridStyles} container spacing={4} wrap={"nowrap"}>
-        <Grid item>
-          <CustomCard
-            classes={styles}
-            name={hero.name}
-            description={hero.description}
-            image={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
-          />
-        </Grid>
-      </Grid>
+      <CustomCard
+        classes={styles}
+        name={hero.name}
+        description={hero.description}
+        image={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
+      />
     </>
   );
 }

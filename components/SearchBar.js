@@ -1,18 +1,27 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
+import InputBase from "@material-ui/core/InputBase";
+import Paper from "@material-ui/core/Paper";
+import SearchIcon from "@material-ui/icons/Search";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    padding: theme.spacing(1),
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    margin: theme.spacing(10),
+  },
+  icon: {
+    margin: theme.spacing(1),
+  },
+}));
 export default function SearchBar({ query, onChange }) {
+  const classes = useStyles();
   return (
-    <div>
-      <TextField
-        id="outlined-secondary"
-        label="Hero"
-        style={{ margin: 20 }}
-        variant="outlined"
-        color="primary"
-        onChange={onChange}
-        value={query}
-      />
-    </div>
+    <Paper className={classes.paper}>
+      <SearchIcon className={classes.icon} />
+      <InputBase onChange={onChange} value={query} />
+    </Paper>
   );
 }
